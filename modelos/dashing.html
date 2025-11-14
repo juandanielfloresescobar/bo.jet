@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JETOUR Dashing | Experiencia Visual Premium</title>
+    <meta
+      name="description"
+      content="Explora el JETOUR Dashing con hero full-screen, galería de cuatro imágenes y especificaciones técnicas en estética monocromática."
+    />
+    <link rel="canonical" href="https://www.jetour-bolivia.com/modelos/dashing.html" />
+    <link rel="icon" href="/assets/img/favicon.png" type="image/png" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <link rel="robots" type="text/plain" href="/robots.txt" />
+    <meta property="og:title" content="JETOUR Dashing | Galería Corporativa" />
+    <meta
+      property="og:description"
+      content="Conoce el JETOUR Dashing a través de imágenes de motor, interior, iluminación y conectividad."
+    />
+    <meta property="og:type" content="product" />
+    <meta property="og:url" content="https://www.jetour-bolivia.com/modelos/dashing.html" />
+    <meta property="og:image" content="https://www.jetour-bolivia.com/assets/img/dashing-1600.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="JETOUR Dashing | Galería Corporativa" />
+    <meta
+      name="twitter:description"
+      content="Hero inmersivo del JETOUR Dashing, galería de cuatro ángulos clave y ficha técnica con CTA inmediato."
+    />
+    <meta name="twitter:image" content="https://www.jetour-bolivia.com/assets/img/dashing-1600.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="stylesheet" href="/assets/css/tailwind.css" />
+    <style>
+      body,
+      button,
+      input,
+      textarea,
+      select {
+        font-family: 'Manrope', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      }
+    </style>
+    <style>
+      .v180-shell {
+        position: relative;
+        background: linear-gradient(135deg, rgba(18, 18, 19, 0.95), rgba(8, 8, 9, 0.9));
+        border-radius: 1.75rem;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 1.75rem;
+        box-shadow: 0 32px 60px -40px rgba(0, 0, 0, 0.85);
+        overflow: hidden;
+      }
+      .v180-stage {
+        position: relative;
+        padding-top: 56.25%;
+        border-radius: 1.25rem;
+        background: rgba(255, 255, 255, 0.05);
+        overflow: hidden;
+        cursor: grab;
+        transition: box-shadow 0.25s ease-in-out;
+        touch-action: none;
+      }
+      .v180-stage:focus-visible {
+        outline: 2px solid rgba(255, 255, 255, 0.4);
+        outline-offset: 6px;
+      }
+      .v180-stage[data-v180-dragging='true'] {
+        cursor: grabbing;
+      }
+      .v180-stage img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 0.25s ease-in-out;
+        will-change: transform;
+      }
+      .v180-progress {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.12);
+        overflow: hidden;
+      }
+      .v180-progress::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: var(--v180-progress, 0%);
+        background: rgba(255, 255, 255, 0.65);
+        transition: width 0.25s ease-in-out;
+      }
+      .v180-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+      }
+      .v180-label {
+        color: rgba(255, 255, 255, 0.85);
+        font-weight: 600;
+      }
+      .v180-hint {
+        color: rgba(255, 255, 255, 0.45);
+      }
+      .v180-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1.75rem;
+      }
+      .v180-btn {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(0, 0, 0, 0.35);
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1.25rem;
+        display: grid;
+        place-items: center;
+        transition: all 0.25s ease-in-out;
+      }
+      .v180-btn:hover,
+      .v180-btn:focus-visible {
+        background: rgba(255, 255, 255, 0.18);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.35);
+      }
+      .v180-btn:active {
+        background: rgba(255, 255, 255, 0.28);
+      }
+      .v180-btn[disabled] {
+        opacity: 0.35;
+        cursor: not-allowed;
+      }
+      .v180-shell[data-v180-ready='false'] .v180-stage {
+        filter: grayscale(1) contrast(0.6);
+      }
+      .v180-shell[data-v180-ready='false'] .v180-hint {
+        color: rgba(255, 255, 255, 0.3);
+      }
+      @media (max-width: 768px) {
+        .v180-shell {
+          padding: 1.25rem;
+        }
+        .v180-meta {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.75rem;
+          letter-spacing: 0.22em;
+        }
+        .v180-controls {
+          gap: 0.75rem;
+        }
+        .v180-btn {
+          width: 2.75rem;
+          height: 2.75rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white antialiased">
+    <header class="brand-shell fixed inset-x-0 top-0 z-50 border-b border-white/10">
+      <nav class="mx-auto grid max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-6 px-6 py-4">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center" aria-label="Regresar a inicio JETOUR">
+            <img src="/assets/img/jetour-logo.png" alt="Logo JETOUR" width="160" height="48" class="brand-logo" />
+          </a>
+        </div>
+        <div class="hidden items-center justify-center gap-4 lg:flex">
+          <a href="/test-drive.html" class="btn-ghost whitespace-nowrap">Prueba de Conducción</a>
+          <a
+            href="https://wa.me/59170000000?text=Hola%2C%20quiero%20cotizar%20el%20modelo%20JETOUR%20Dashing."
+            class="btn-primary whitespace-nowrap"
+            target="_blank"
+            rel="noopener"
+            >Ventas</a
+          >
+        </div>
+        <div class="flex items-center justify-end">
+          <a href="/posventa.html" aria-label="Ir a posventa Group Saav">
+            <img src="/assets/img/group-saav-logo.png" alt="Logo Group Saav" width="200" height="48" class="partner-logo" />
+          </a>
+        </div>
+        <button type="button" class="lg:hidden" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu">
+          <span class="sr-only">Abrir menú</span>
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </nav>
+      <div id="mobile-menu" data-mobile-menu hidden class="border-t border-white/10 bg-black/95 px-6 py-4 lg:hidden">
+        <div class="flex flex-col gap-4">
+          <a href="/test-drive.html" class="btn-ghost text-center whitespace-nowrap">Prueba de Conducción</a>
+          <a
+            href="https://wa.me/59170000000?text=Hola%2C%20quiero%20cotizar%20el%20modelo%20JETOUR%20Dashing."
+            class="btn-primary text-center whitespace-nowrap"
+            target="_blank"
+            rel="noopener"
+            >Ventas</a
+          >
+          <div class="flex justify-center">
+            <a href="/posventa.html" aria-label="Ir a posventa Group Saav">
+              <img src="/assets/img/group-saav-logo.png" alt="Logo Group Saav" width="200" height="48" class="partner-logo" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="relative flex min-h-screen items-center justify-center overflow-hidden pt-24">
+        <picture class="absolute inset-0 -z-20 interactive-target" data-interactive tabindex="0">
+          <source srcset="/assets/img/dashing-1600.avif" type="image/avif" />
+          <source srcset="/assets/img/dashing-1600.webp" type="image/webp" />
+          <img
+            src="/assets/img/dashing-1600.jpg"
+            alt="JETOUR Dashing en estudio monocromático"
+            width="1600"
+            height="900"
+            loading="eager"
+            fetchpriority="high"
+            class="interactive-media h-full w-full object-cover"
+          />
+        </picture>
+        <img
+          src="/assets/img/dashing-logo.png"
+          alt="Logotipo JETOUR Dashing"
+          width="360"
+          height="112"
+          class="absolute bottom-10 left-6 z-10 h-24 w-auto md:bottom-16 md:left-12 md:h-32"
+          data-animate
+        />
+        <a
+          href="https://wa.me/59170000000?text=Hola%2C%20quiero%20probar%20el%20JETOUR%20Dashing."
+          class="btn-primary absolute left-6 top-28 z-10 md:left-12 md:top-32"
+          target="_blank"
+          rel="noopener"
+          >COMPRAR</a
+        >
+      </section>
+
+      <section class="border-t border-white/10 bg-black py-24" aria-labelledby="visor-dashing">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="mb-12 text-center" data-animate>
+            <h2 id="visor-dashing" class="text-3xl font-semibold uppercase tracking-[0.35em] text-white">Visor 180°</h2>
+            <p class="mt-4 text-sm uppercase tracking-[0.3em] text-white/60">Volumen escultural del JETOUR Dashing</p>
+          </div>
+          <div
+            class="v180-shell"
+            data-v180-viewer
+            data-model="Dashing"
+            data-color="Gris Cosmos"
+            data-prefix="Dashing_360_"
+            data-digits="5"
+            data-start="0"
+            data-max="120"
+            data-inertia="true"
+            data-wheel-zoom="true"
+            data-v180-ready="false"
+          >
+            <div
+              class="v180-stage"
+              data-v180-stage
+              tabindex="0"
+              aria-label="Visor 180 grados del JETOUR Dashing en color Gris Cosmos"
+            >
+              <img
+                data-v180-frame
+                src=""
+                alt="Vista 180° JETOUR Dashing Gris Cosmos"
+                width="1600"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="v180-progress" data-v180-progress></div>
+            </div>
+            <div class="v180-meta">
+              <p class="v180-label" data-v180-label>JETOUR Dashing · Gris Cosmos</p>
+              <p class="v180-hint" data-v180-status>Inicializando visor...</p>
+            </div>
+            <div class="v180-controls" role="group" aria-label="Controles del visor 180 grados">
+              <button type="button" class="v180-btn" data-v180-prev aria-label="Vista anterior">⟲</button>
+              <button type="button" class="v180-btn" data-v180-next aria-label="Vista siguiente">⟳</button>
+              <button type="button" class="v180-btn" data-v180-play aria-label="Reproducir movimiento">▶</button>
+              <button type="button" class="v180-btn" data-v180-reset aria-label="Reiniciar vista">⤾</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Galería visual -->
+      <section class="bg-black py-24">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="mb-12 flex justify-center" data-animate>
+            <img
+              src="/assets/img/dashing-logo.png"
+              alt="Logotipo JETOUR Dashing"
+              width="440"
+              height="136"
+              loading="lazy"
+              decoding="async"
+              class="w-64 md:w-80"
+            />
+          </div>
+          <div class="model-gallery" data-animate>
+            <figure
+              class="interactive-target model-gallery__item model-gallery__item--wide"
+              data-interactive
+              tabindex="0"
+            >
+              <img
+                src="/assets/img/dashing-ut01.png"
+                alt="Vista panorámica del JETOUR Dashing tono 01"
+                width="1600"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                class="interactive-media model-gallery__media"
+              />
+            </figure>
+            <figure class="interactive-target model-gallery__item" data-interactive tabindex="0">
+              <img
+                src="/assets/img/dashing-ut02.png"
+                alt="Detalle visual del JETOUR Dashing tono 02"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                class="interactive-media model-gallery__media"
+              />
+            </figure>
+            <figure class="interactive-target model-gallery__item" data-interactive tabindex="0">
+              <img
+                src="/assets/img/dashing-ut03.png"
+                alt="Interior ejecutivo JETOUR Dashing tono 03"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                class="interactive-media model-gallery__media"
+              />
+            </figure>
+            <figure class="interactive-target model-gallery__item" data-interactive tabindex="0">
+              <img
+                src="/assets/img/dashing-ut04.png"
+                alt="Iluminación exterior JETOUR Dashing tono 04"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                class="interactive-media model-gallery__media"
+              />
+            </figure>
+            <figure class="interactive-target model-gallery__item" data-interactive tabindex="0">
+              <img
+                src="/assets/img/dashing-ut05.png"
+                alt="Tecnología JETOUR Dashing tono 05"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                class="interactive-media model-gallery__media"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Paleta de colores -->
+      <section class="border-t border-white/10 bg-black py-16">
+        <div class="mx-auto max-w-6xl px-6" data-animate>
+          <h2 class="text-center text-3xl font-semibold uppercase tracking-[0.35em] text-white">Paleta de colores</h2>
+          <p class="mt-4 text-center text-xs uppercase tracking-[0.3em] text-white/60">
+            Acabados distintivos para el JETOUR Dashing
+          </p>
+          <div class="mt-10 grid gap-6 sm:grid-cols-2">
+            <article
+              class="interactive-target flex flex-col items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur"
+              data-interactive
+              tabindex="0"
+            >
+              <div class="h-24 w-full rounded-2xl border border-white/10 bg-[#1a1b1d]"></div>
+              <p class="text-xs uppercase tracking-[0.3em] text-white/70">Gris Cosmos</p>
+            </article>
+            <article
+              class="interactive-target flex flex-col items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur"
+              data-interactive
+              tabindex="0"
+            >
+              <div class="h-24 w-full rounded-2xl border border-white/10 bg-[#4c5563]"></div>
+              <p class="text-xs uppercase tracking-[0.3em] text-white/70">Azul Nocturno</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-t border-white/10 bg-white text-black">
+        <div class="mx-auto max-w-6xl px-6 py-24">
+          <div class="grid gap-12 md:grid-cols-2" data-animate>
+            <div>
+              <h2 class="text-3xl font-semibold uppercase tracking-[0.35em]">Especificaciones Técnicas</h2>
+              <p class="mt-6 text-base text-black/60">
+                Un SUV diseñado para directivos que valoran el diseño audaz, la dinámica de conducción y la conectividad.
+              </p>
+            </div>
+            <div class="grid gap-6 md:grid-cols-2">
+              <dl class="space-y-3 text-sm text-black/70">
+                <div>
+                  <dt class="font-semibold uppercase tracking-[0.3em] text-black">Motor</dt>
+                  <dd>1.6T GDI · 197 HP · 290 Nm</dd>
+                </div>
+                <div>
+                  <dt class="font-semibold uppercase tracking-[0.3em] text-black">Transmisión</dt>
+                  <dd>DCT 7 velocidades</dd>
+                </div>
+                <div>
+                  <dt class="font-semibold uppercase tracking-[0.3em] text-black">Tracción</dt>
+                  <dd>Delantera con modos Sport / Eco</dd>
+                </div>
+                <div>
+                  <dt class="font-semibold uppercase tracking-[0.3em] text-black">Seguridad</dt>
+                  <dd>ADAS Nivel 2 · Control crucero adaptativo</dd>
+                </div>
+              </dl>
+              <dl class="space-y-3 text-sm text-black/70">
+                <div>
+                  <dt class="font-semibold uppercase tracking-[0.3em] text-black">Dimensiones</dt>
+                  <dd>4.59 m largo · 1.9 m ancho</dd>
+                </div>
+                <div>
+                  <dt class="font-semibold uppercase tracking-[0.3em] text-black">Capacidad</dt>
+                  <dd>5 plazas · 438 L baúl</dd>
+                </div>
+                <div>
+                  <dt class="font-semibold uppercase tracking-[0.3em] text-black">Tecnología</dt>
+                  <dd>Panel dual 15" + 10" · HUD</dd>
+                </div>
+                <div>
+                  <dt class="font-semibold uppercase tracking-[0.3em] text-black">Garantía</dt>
+                  <dd>5 años o 150.000 km</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <div class="mt-12 flex flex-wrap items-center justify-between gap-4" data-animate>
+            <a
+              href="https://wa.me/59170000000?text=Hola%2C%20quiero%20agendar%20una%20presentaci%C3%B3n%20del%20JETOUR%20Dashing."
+              class="btn-primary"
+              target="_blank"
+              rel="noopener"
+              >COMPRAR</a
+            >
+            <a href="/index.html#modelo-dashing" class="btn-ghost">Volver a modelos</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/10 bg-black py-12">
+      <div class="mx-auto flex max-w-6xl flex-col gap-8 px-6 md:flex-row md:items-center md:justify-between">
+        <div class="flex flex-col gap-3 text-xs uppercase tracking-[0.35em] text-white/60">
+          <span>© 2025 JETOUR BOLIVIA | GROUP SAAV</span>
+          <span>Desarrollado por Quantis Consulting</span>
+        </div>
+        <div class="flex flex-wrap gap-6 text-xs uppercase tracking-[0.35em] text-white/60">
+          <a href="/posventa.html" class="hover:text-white">Posventa</a>
+          <a href="mailto:legal@jetour-bolivia.com" class="hover:text-white">Legal</a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "JETOUR Dashing",
+        "brand": "JETOUR",
+        "image": [
+          "https://www.jetour-bolivia.com/assets/img/dashing-1600.jpg",
+          "https://www.jetour-bolivia.com/assets/img/dashing-galeria-motor.jpg",
+          "https://www.jetour-bolivia.com/assets/img/dashing-galeria-interior.jpg",
+          "https://www.jetour-bolivia.com/assets/img/dashing-galeria-conectividad.jpg"
+        ],
+        "description": "SUV vanguardista con motor 1.6T, iluminación envolvente y conectividad inteligente.",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.jetour-bolivia.com/modelos/dashing.html"
+        }
+      }
+    </script>
+
+    <script>
+      (function () {
+        const viewers = document.querySelectorAll('[data-v180-viewer]');
+        if (!viewers.length) return;
+
+        const pad = (value, length) => value.toString().padStart(length, '0');
+
+        const verifyImage = (url) =>
+          new Promise((resolve) => {
+            const testImage = new Image();
+            let attempts = 0;
+            const finalize = (result) => {
+              testImage.onload = null;
+              testImage.onerror = null;
+              resolve(result);
+            };
+            const attempt = (target) => {
+              testImage.onload = () => finalize(true);
+              testImage.onerror = () => {
+                if (attempts < 1) {
+                  attempts += 1;
+                  const cacheBreaker = target.includes('?') ? `&retry=${Date.now()}` : `?retry=${Date.now()}`;
+                  testImage.src = `${target}${cacheBreaker}`;
+                } else {
+                  console.warn(`[v180] missing frame: ${target}`);
+                  finalize(false);
+                }
+              };
+              testImage.src = target;
+            };
+            attempt(url);
+          });
+
+        const configByModel = {
+          T2: { prefix: 'car.', digits: 4, start: 1, max: 35, suffix: '.png', fixed: true },
+          X50: { prefix: 'x50-360HUI_', digits: 5, start: 0, max: 120, suffix: '.png', fixed: false },
+          X70: { prefix: 'X70_360_', digits: 5, start: 0, max: 120, suffix: '.png', fixed: false },
+          Dashing: { prefix: 'Dashing_360_', digits: 5, start: 0, max: 120, suffix: '.png', fixed: false },
+        };
+
+        const loadFrames = async (viewer) => {
+          const model = viewer.dataset.model || '';
+          const color = viewer.dataset.color || '';
+          const baseConfig = configByModel[model] || {};
+          const prefix = viewer.dataset.prefix || baseConfig.prefix || '';
+          const digits = Number(viewer.dataset.digits || baseConfig.digits || 5);
+          const start = Number(viewer.dataset.start || baseConfig.start || 0);
+          const max = Number(viewer.dataset.max || baseConfig.max || 120);
+          const suffix = viewer.dataset.suffix || baseConfig.suffix || '.png';
+          const contiguous = viewer.dataset.contiguous
+            ? viewer.dataset.contiguous !== 'false'
+            : Object.prototype.hasOwnProperty.call(baseConfig, 'fixed')
+            ? baseConfig.fixed === false
+            : true;
+          const safeModel = encodeURIComponent(model.trim());
+          const safeColor = encodeURIComponent(color.trim());
+          const customPath = viewer.dataset.path ? viewer.dataset.path.replace(/\/$/, '') : '';
+          const basePath = customPath ? `${customPath}/` : `/assets/visor/${safeModel}/${safeColor}/`;
+          const frames = [];
+
+          for (let index = start; index <= max; index += 1) {
+            const fileName = `${prefix}${pad(index, digits)}${suffix}`;
+            const url = `${basePath}${fileName}`;
+            const exists = await verifyImage(url);
+            if (!exists) {
+              if (frames.length === 0) {
+                if (!contiguous) {
+                  continue;
+                }
+                break;
+              }
+              if (contiguous) {
+                break;
+              }
+              continue;
+            }
+            frames.push(url);
+          }
+
+          return frames;
+        };
+
+        viewers.forEach((viewer) => {
+          const stage = viewer.querySelector('[data-v180-stage]');
+          const frame = viewer.querySelector('[data-v180-frame]');
+          const progressBar = viewer.querySelector('[data-v180-progress]');
+          const label = viewer.querySelector('[data-v180-label]');
+          const status = viewer.querySelector('[data-v180-status]');
+          const prevButton = viewer.querySelector('[data-v180-prev]');
+          const nextButton = viewer.querySelector('[data-v180-next]');
+          const playButton = viewer.querySelector('[data-v180-play]');
+          const resetButton = viewer.querySelector('[data-v180-reset]');
+
+          if (!stage || !frame) return;
+
+          const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+          const state = {
+            frames: [],
+            current: 0,
+            min: 0,
+            max: 0,
+            playing: false,
+            playTimer: null,
+            playDirection: 1,
+            isDragging: false,
+            dragAccumulator: 0,
+            lastPointerX: 0,
+            velocity: 0,
+            scale: 1,
+          };
+
+          const updateProgress = () => {
+            if (progressBar) {
+              const percent = state.max > 0 ? (state.current / state.max) * 100 : 0;
+              progressBar.style.setProperty('--v180-progress', `${percent}%`);
+            }
+            if (prevButton) prevButton.disabled = state.current <= state.min;
+            if (nextButton) nextButton.disabled = state.current >= state.max;
+            if (resetButton) resetButton.disabled = state.current === state.min;
+            if (playButton) playButton.setAttribute('aria-pressed', state.playing ? 'true' : 'false');
+          };
+
+          const applyFrame = (targetIndex) => {
+            if (!state.frames.length) return;
+            const newIndex = clamp(targetIndex, state.min, state.max);
+            if (newIndex === state.current && frame.getAttribute('src')) {
+              updateProgress();
+              return;
+            }
+            state.current = newIndex;
+            const src = state.frames[state.current];
+            if (frame.getAttribute('src') !== src) {
+              frame.setAttribute('src', src);
+            }
+            frame.setAttribute('data-v180-index', String(state.current));
+            updateProgress();
+          };
+
+          const stopPlayback = () => {
+            if (state.playTimer) {
+              window.clearTimeout(state.playTimer);
+              state.playTimer = null;
+            }
+            state.playing = false;
+            if (playButton) {
+              playButton.textContent = '▶';
+              playButton.setAttribute('aria-label', 'Reproducir movimiento');
+            }
+            updateProgress();
+          };
+
+          const stepPlayback = () => {
+            if (!state.playing) return;
+            const nextIndex = state.current + state.playDirection;
+            if (nextIndex > state.max || nextIndex < state.min) {
+              state.playDirection *= -1;
+              state.playTimer = window.setTimeout(stepPlayback, 90);
+              return;
+            }
+            applyFrame(nextIndex);
+            state.playTimer = window.setTimeout(stepPlayback, 90);
+          };
+
+          const togglePlayback = () => {
+            if (!state.frames.length) return;
+            if (state.playing) {
+              stopPlayback();
+              return;
+            }
+            state.playing = true;
+            state.playDirection = state.current >= state.max ? -1 : 1;
+            if (playButton) {
+              playButton.textContent = '❚❚';
+              playButton.setAttribute('aria-label', 'Pausar movimiento');
+            }
+            stepPlayback();
+            updateProgress();
+          };
+
+          const applyInertia = () => {
+            if (viewer.dataset.inertia !== 'true') return;
+            let velocity = state.velocity;
+            const friction = 0.88;
+            const tick = () => {
+              velocity *= friction;
+              if (Math.abs(velocity) <= 0.6) {
+                state.velocity = 0;
+                return;
+              }
+              const delta = velocity > 0 ? Math.ceil(velocity / 8) : Math.floor(velocity / 8);
+              if (delta !== 0) {
+                applyFrame(state.current + delta);
+              }
+              window.requestAnimationFrame(tick);
+            };
+            window.requestAnimationFrame(tick);
+          };
+
+          const handlePointerDown = (event) => {
+            if (!state.frames.length) return;
+            stopPlayback();
+            state.isDragging = true;
+            state.dragAccumulator = 0;
+            state.lastPointerX = event.clientX;
+            state.velocity = 0;
+            stage.setPointerCapture(event.pointerId);
+            stage.dataset.v180Dragging = 'true';
+          };
+
+          const handlePointerMove = (event) => {
+            if (!state.isDragging) return;
+            const deltaX = event.clientX - state.lastPointerX;
+            state.lastPointerX = event.clientX;
+            state.dragAccumulator += deltaX;
+            state.velocity = deltaX;
+            const threshold = 8;
+            if (Math.abs(state.dragAccumulator) >= threshold) {
+              const step = state.dragAccumulator > 0 ? 1 : -1;
+              applyFrame(state.current + step);
+              state.dragAccumulator -= step * threshold;
+            }
+          };
+
+          const handlePointerUp = (event) => {
+            if (!state.isDragging) return;
+            state.isDragging = false;
+            try {
+              stage.releasePointerCapture(event.pointerId);
+            } catch (error) {}
+            stage.dataset.v180Dragging = 'false';
+            applyInertia();
+          };
+
+          const handleWheel = (event) => {
+            if (viewer.dataset.wheelZoom !== 'true') return;
+            event.preventDefault();
+            const rect = stage.getBoundingClientRect();
+            const originX = ((event.clientX - rect.left) / rect.width) * 100;
+            const originY = ((event.clientY - rect.top) / rect.height) * 100;
+            frame.style.transformOrigin = `${originX}% ${originY}%`;
+            const nextScale = clamp(state.scale + event.deltaY * -0.0015, 1, 2.5);
+            state.scale = nextScale;
+            frame.style.transform = `scale(${state.scale})`;
+          };
+
+          const resetView = () => {
+            stopPlayback();
+            state.scale = 1;
+            frame.style.transform = 'scale(1)';
+            frame.style.transformOrigin = '50% 50%';
+            applyFrame(state.min);
+          };
+
+          const handleKeydown = (event) => {
+            if (!state.frames.length) return;
+            if (event.key === 'ArrowLeft') {
+              event.preventDefault();
+              stopPlayback();
+              applyFrame(state.current - 1);
+            } else if (event.key === 'ArrowRight') {
+              event.preventDefault();
+              stopPlayback();
+              applyFrame(state.current + 1);
+            } else if (event.key === ' ') {
+              event.preventDefault();
+              togglePlayback();
+            } else if (event.key && event.key.toLowerCase() === 'r') {
+              event.preventDefault();
+              resetView();
+            }
+          };
+
+          if (status) {
+            status.textContent = 'Inicializando visor...';
+          }
+
+          loadFrames(viewer)
+            .then((frames) => {
+              state.frames = frames;
+              state.max = frames.length ? frames.length - 1 : 0;
+              viewer.dataset.v180Ready = frames.length ? 'true' : 'false';
+              if (!frames.length) {
+                if (status) status.textContent = 'Vista 180° no disponible';
+                if (playButton) playButton.disabled = true;
+                if (prevButton) prevButton.disabled = true;
+                if (nextButton) nextButton.disabled = true;
+                if (resetButton) resetButton.disabled = true;
+                return;
+              }
+              if (label && viewer.dataset.model && viewer.dataset.color) {
+                label.textContent = `JETOUR ${viewer.dataset.model} · ${viewer.dataset.color}`;
+              }
+              if (status) status.textContent = 'Desliza o usa los controles';
+              frame.setAttribute('src', frames[0]);
+              frame.setAttribute('data-v180-index', '0');
+              frame.setAttribute('loading', 'lazy');
+              frame.setAttribute('decoding', 'async');
+              state.current = 0;
+              updateProgress();
+            })
+            .catch(() => {
+              viewer.dataset.v180Ready = 'false';
+              if (status) status.textContent = 'No se pudo cargar la secuencia';
+            });
+
+          stage.addEventListener('pointerdown', handlePointerDown);
+          stage.addEventListener('pointermove', handlePointerMove);
+          stage.addEventListener('pointerup', handlePointerUp);
+          stage.addEventListener('pointercancel', handlePointerUp);
+          stage.addEventListener('pointerleave', (event) => {
+            if (state.isDragging) {
+              handlePointerUp(event);
+            }
+          });
+          stage.addEventListener('wheel', handleWheel, { passive: false });
+          stage.addEventListener('keydown', handleKeydown);
+
+          if (prevButton) {
+            prevButton.addEventListener('click', () => {
+              stopPlayback();
+              applyFrame(state.current - 1);
+            });
+          }
+          if (nextButton) {
+            nextButton.addEventListener('click', () => {
+              stopPlayback();
+              applyFrame(state.current + 1);
+            });
+          }
+          if (playButton) {
+            playButton.addEventListener('click', togglePlayback);
+          }
+          if (resetButton) {
+            resetButton.addEventListener('click', resetView);
+          }
+        });
+      })();
+    </script>
+
+    <script src="/assets/js/ui.js" defer></script>
+  </body>
+</html>
